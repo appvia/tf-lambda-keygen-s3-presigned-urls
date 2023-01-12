@@ -1,0 +1,20 @@
+content: |-
+  # tf-lambda-keygen-s3-presigned-urls
+
+  This module deploys a Lambda function which validates a Keygen.sh license key and generates an S3 presigned URL for file uploads.
+
+  The Lambda expects to be passed a payload containing a license key and a ticket id for reference. Below is an example json payload when testing the Lambda function directly:
+
+  ```json
+  {{ include "example/lambda-event.json" }}
+  ```
+
+  When calling this through the AWS API Gateway (also deployed via this Terraform code), your json payload should look as follows:
+
+  ```json
+  {{ include "example/api-gw-event.json" }}
+  ```
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
